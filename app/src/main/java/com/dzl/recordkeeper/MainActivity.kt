@@ -25,8 +25,33 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate()
+        menuInflater.inflate(R.menu.toolbar, menu)
+        return true
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.reset_cardio -> onResetCardioClicked()
+            R.id.reset_lifting -> onResetLiftingClicked()
+            R.id.reset_all -> onResetAllClicked()
+            else -> return super.onOptionsItemSelected(item)
+
+        }
+        return true
+    }
+
+    private fun onResetCardioClicked() {
+        Toast.makeText(this, "Cardio Clicked", Toast.LENGTH_LONG).show()
+    }
+
+    private fun onResetLiftingClicked() {
+        Toast.makeText(this, "Lifting Clicked", Toast.LENGTH_LONG).show()
+    }
+
+    private fun onResetAllClicked() {
+        Toast.makeText(this, "All Clicked", Toast.LENGTH_LONG).show()
+    }
+
 
     private fun onCardioClicked() {
         supportFragmentManager.commit {
