@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reset_cardio"
+        android:title="@string/reset_cardio_records"/>
+    <item
+        android:id="@+id/reset_lifting"
+        android:title="@string/reset_lifting_records"/>
+    <item
+        android:id="@+id/reset_all"
+        android:title="@string/reset_all_records"/>
+
+</menu>

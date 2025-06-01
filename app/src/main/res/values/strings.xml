@@ -2,4 +2,18 @@
     <string name="app_name">Record Keeper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cardio">Cardio</string>
+    <string name="cardio_image_description">Cardio Image</string>
+    <string name="marathon_heading">Marathon</string>
+    <string name="half_marathon_heading">Half Marathon</string>
+    <string name="ten_km_heading">10km</string>
+    <string name="five_km_heading">5km</string>
+    <string name="overhead_press">Overhead Press</string>
+    <string name="lifting">Lifting</string>
+    <string name="squat">Squat</string>
+    <string name="deadlift">Deadlift</string>
+    <string name="bench_press">Bench Press</string>
+    <string name="reset_cardio_records">reset_cardio_records</string>
+    <string name="reset_lifting_records">reset_lifting_records</string>
+    <string name="reset_all_records">reset_all_records</string>
 </resources>
