@@ -3,11 +3,12 @@ package com.dzl.recordkeeper
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import com.dzl.recordkeeper.cardio.CardioFragment
 import com.dzl.recordkeeper.databinding.ActivityMainBinding
+import com.dzl.recordkeeper.lifting.LiftingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         binding.bottomNav.setOnItemSelectedListener(this)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar, menu)

@@ -16,4 +16,8 @@
     <string name="reset_cardio_records">Reset cardio records</string>
     <string name="reset_lifting_records">Reset lifting records</string>
     <string name="reset_all_records">Reset all records</string>
+    <string name="record_field_hint">Record</string>
+    <string name="date_field_hint">Date</string>
+    <string name="save_button_text">Save</string>
+    <string name="clear_record_text">Clear Record</string>
 </resources>

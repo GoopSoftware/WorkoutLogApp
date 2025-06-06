@@ -1,4 +1,4 @@
-package com.dzl.recordkeeper
+package com.dzl.recordkeeper.lifting
 
 import android.content.Intent
 import android.os.Bundle
