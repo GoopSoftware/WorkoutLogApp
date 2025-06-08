@@ -12,40 +12,55 @@ import com.dzl.recordkeeper.databinding.ActivityEditRunningRecordBinding
 class EditRunningRecordActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditRunningRecordBinding
+    private val runningPreferences: SharedPreferences by lazy {
+        getSharedPreferences(
+            "running",
+            Context.MODE_PRIVATE
+        )
+    }
+    private val distance by lazy { intent.getStringExtra("Distance") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditRunningRecordBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val distance = intent.getStringExtra("Distance")
-        title = "$distance Record"
+        setupUi()
+        displayRecord()
+    }
 
-        displayRecord(distance)
+    private fun setupUi() {
+        title = "$distance Record"
         binding.buttonSave.setOnClickListener {
-            saveRecord(distance)
+            saveRecord()
             finish()
+        }
+        binding.buttonClear.setOnClickListener {
+            clearRecord()
         }
     }
 
-    private fun displayRecord(distance: String?) {
-        val runningPreferences = getSharedPreferences("running", Context.MODE_PRIVATE)
 
+    private fun displayRecord() {
         binding.editTextRecord.setText(runningPreferences.getString("$distance record", null))
         binding.editTextDate.setText(runningPreferences.getString("$distance date", null))
     }
 
-    private fun saveRecord(distance: String?) {
-
+    private fun saveRecord() {
         val record = binding.editTextRecord.text.toString()
         val date = binding.editTextDate.text.toString()
 
-        val runningPreferences = getSharedPreferences("running", Context.MODE_PRIVATE)
         runningPreferences.edit {
             putString("$distance record", record)
             putString("$distance date", date)
         }
+    }
 
-
+    private fun clearRecord() {
+        runningPreferences.edit {
+            remove("$distance record")
+            remove("$distance date")
+            finish()
+        }
     }
 
 }

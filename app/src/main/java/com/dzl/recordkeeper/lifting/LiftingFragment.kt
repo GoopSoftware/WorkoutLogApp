@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.dzl.recordkeeper.cardio.EditRunningRecordActivity
 import com.dzl.recordkeeper.databinding.FragmentLiftingBinding
 
 class LiftingFragment : Fragment(){
@@ -34,7 +35,7 @@ class LiftingFragment : Fragment(){
     }
 
     private fun launchLiftingRecordScreen(lift: String) {
-        val intent = Intent(context, EditLiftingRecordActivity::class.java)
+        val intent = Intent(context, EditRunningRecordActivity::class.java)
         intent.putExtra("lift", lift)
         startActivity(intent)
     }
