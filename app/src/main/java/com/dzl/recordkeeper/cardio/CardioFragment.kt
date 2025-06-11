@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dzl.recordkeeper.databinding.FragmentCardioBinding
+import com.dzl.recordkeeper.editrecord.EditRecordActivity
+import com.dzl.recordkeeper.editrecord.INTENT_EXTRA_SCREEN_DATA
 
 class CardioFragment : Fragment() {
-
 
     private lateinit var binding: FragmentCardioBinding
 
@@ -44,7 +45,7 @@ class CardioFragment : Fragment() {
 
     private fun displayRecords() {
 
-        val runningPreferences = requireContext().getSharedPreferences("running", Context.MODE_PRIVATE)
+        val runningPreferences = requireContext().getSharedPreferences(FILENAME, Context.MODE_PRIVATE)
 
         binding.textView5kmValue.text = runningPreferences.getString("5km record", null)
         binding.textView5kmDate.text =  runningPreferences.getString("5km date", null)
@@ -58,10 +59,13 @@ class CardioFragment : Fragment() {
 
 
     private fun launchRunningRecordScreen(distance: String) {
-        val intent = Intent(context, EditRunningRecordActivity::class.java)
-        intent.putExtra("Distance", distance)
+        val intent = Intent(context, EditRecordActivity::class.java)
+        intent.putExtra(INTENT_EXTRA_SCREEN_DATA, EditRecordActivity.ScreenData(distance, FILENAME, "Time"))
         startActivity(intent)
     }
 
+    companion object {
+        const val FILENAME = "cardio"
+    }
 
 }
