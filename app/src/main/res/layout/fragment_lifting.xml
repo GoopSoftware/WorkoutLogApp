@@ -62,22 +62,19 @@
 
                 <TextView
                     android:id="@+id/text_view_squat_heading"
+                    style="@style/RecordNameTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
                     android:text="@string/squat"
-                    android:textColor="?attr/colorPrimary"
-                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/text_view_squat_value"
+                    style="@style/RecordValueTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="285" />
@@ -87,8 +84,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="16sp"
+
+                    style="@style/RecordDateTextAppearance"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_squat_value"
                     tools:text="05/18/2025" />
@@ -111,22 +108,21 @@
                 <TextView
 
                     android:id="@+id/text_view_bench_press_heading"
+                    style="@style/RecordNameTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
+
+
                     android:text="@string/bench_press"
-                    android:textColor="?attr/colorPrimary"
-                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/text_view_bench_press_value"
+                    style="@style/RecordValueTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="225" />
@@ -135,9 +131,8 @@
                     android:id="@+id/text_view_bench_press_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="16sp"
+                    style="@style/RecordDateTextAppearance"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_bench_press_value"
                     tools:text="05/18/2025" />
@@ -160,22 +155,21 @@
 
                 <TextView
                     android:id="@+id/text_view_deadlift_heading"
+                    style="@style/RecordNameTextAppearance"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
+
                     android:text="@string/deadlift"
-                    android:textColor="?attr/colorPrimary"
-                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/text_view_deadlift_value"
+                    style="@style/RecordValueTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="385" />
@@ -185,8 +179,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="16sp"
+                    style="@style/RecordDateTextAppearance"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_deadlift_value"
                     tools:text="05/18/2025" />
@@ -209,22 +203,19 @@
 
                 <TextView
                     android:id="@+id/text_view_marathon_overhead_press"
+                    style="@style/RecordNameTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
+
                     android:text="@string/overhead_press"
-                    android:textColor="?attr/colorPrimary"
-                    android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/text_view_overhead_press_value"
+                    style="@style/RecordValueTextAppearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="135" />
@@ -233,9 +224,9 @@
                     android:id="@+id/text_view_overhead_press_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/RecordDateTextAppearance"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="16sp"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_view_overhead_press_value"
                     tools:text="05/18/2025" />

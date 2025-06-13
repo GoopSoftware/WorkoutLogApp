@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dzl.recordkeeper.databinding.FragmentLiftingBinding
 import com.dzl.recordkeeper.editrecord.EditRecordActivity
-import com.dzl.recordkeeper.editrecord.INTENT_EXTRA_SCREEN_DATA
 
 class LiftingFragment : Fragment(){
 
@@ -37,14 +36,14 @@ class LiftingFragment : Fragment(){
     private fun displayRecords() {
         val liftingPreferences = requireContext().getSharedPreferences(FILENAME, Context.MODE_PRIVATE)
 
-        binding.textViewSquatValue.text = liftingPreferences.getString("Squat record", null)
-        binding.textViewSquatDate.text = liftingPreferences.getString("Squat date", null)
-        binding.textViewBenchPressValue.text = liftingPreferences.getString("Bench Press record", null)
-        binding.textViewBenchPressDate.text = liftingPreferences.getString("Bench Press date", null)
-        binding.textViewDeadliftValue.text = liftingPreferences.getString("Dead lift record", null)
-        binding.textViewDeadliftDate.text = liftingPreferences.getString("Dead lift date", null)
-        binding.textViewOverheadPressValue.text = liftingPreferences.getString("Overhead Press record", null)
-        binding.textViewOverheadPressDate.text = liftingPreferences.getString("Overhead Press date", null)
+        binding.textViewSquatValue.text = liftingPreferences.getString("Squat ${EditRecordActivity.SHARED_PREFERENCE_RECORD_KEY}", null)
+        binding.textViewSquatDate.text = liftingPreferences.getString("Squat ${EditRecordActivity.SHARED_PREFERENCE_DATE_KEY}", null)
+        binding.textViewBenchPressValue.text = liftingPreferences.getString("Bench Press ${EditRecordActivity.SHARED_PREFERENCE_RECORD_KEY}", null)
+        binding.textViewBenchPressDate.text = liftingPreferences.getString("Bench Press ${EditRecordActivity.SHARED_PREFERENCE_DATE_KEY}", null)
+        binding.textViewDeadliftValue.text = liftingPreferences.getString("Dead lift ${EditRecordActivity.SHARED_PREFERENCE_RECORD_KEY}", null)
+        binding.textViewDeadliftDate.text = liftingPreferences.getString("Dead lift ${EditRecordActivity.SHARED_PREFERENCE_DATE_KEY}", null)
+        binding.textViewOverheadPressValue.text = liftingPreferences.getString("Overhead Press ${EditRecordActivity.SHARED_PREFERENCE_RECORD_KEY}", null)
+        binding.textViewOverheadPressDate.text = liftingPreferences.getString("Overhead Press ${EditRecordActivity.SHARED_PREFERENCE_DATE_KEY}", null)
     }
 
     private fun setupClickListeners() {
@@ -56,13 +55,16 @@ class LiftingFragment : Fragment(){
 
     private fun launchLiftingRecordScreen(lift: String) {
         val intent = Intent(context, EditRecordActivity::class.java)
-        intent.putExtra(INTENT_EXTRA_SCREEN_DATA, EditRecordActivity.ScreenData(lift, FILENAME, "Pounds"))
+        intent.putExtra(EditRecordActivity.INTENT_EXTRA_SCREEN_DATA, EditRecordActivity.ScreenData(lift, FILENAME, "Pounds"))
         intent.putExtra("lift", lift)
         startActivity(intent)
     }
 
     companion object {
         const val FILENAME = "lifting"
+
     }
+
+
 
 }

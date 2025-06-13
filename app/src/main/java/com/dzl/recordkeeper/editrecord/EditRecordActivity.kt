@@ -3,12 +3,12 @@ package com.dzl.recordkeeper.editrecord
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import com.dzl.recordkeeper.databinding.ActivityEditRecordBinding
 import java.io.Serializable
 
-const val INTENT_EXTRA_SCREEN_DATA = "screen_data"
 
 class EditRecordActivity : AppCompatActivity() {
 
@@ -37,6 +37,18 @@ class EditRecordActivity : AppCompatActivity() {
         displayRecord()
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
+        }
+
+
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun setupUi() {
         title = "${screenData.record} Record"
         binding.textInputRecord.hint = screenData.recordFieldHint
@@ -51,8 +63,8 @@ class EditRecordActivity : AppCompatActivity() {
 
 
     private fun displayRecord() {
-        binding.editTextRecord.setText(recordPreferences.getString("${screenData.record} record", null))
-        binding.editTextDate.setText(recordPreferences.getString("${screenData.record} date", null))
+        binding.editTextRecord.setText(recordPreferences.getString("${screenData.record} $SHARED_PREFERENCE_RECORD_KEY", null))
+        binding.editTextDate.setText(recordPreferences.getString("${screenData.record} $SHARED_PREFERENCE_DATE_KEY", null))
     }
 
     private fun saveRecord() {
@@ -60,15 +72,15 @@ class EditRecordActivity : AppCompatActivity() {
         val date = binding.editTextDate.text.toString()
 
         recordPreferences.edit {
-            putString("${this@EditRecordActivity.screenData.record} record", record)
-            putString("${this@EditRecordActivity.screenData.record} date", date)
+            putString("${this@EditRecordActivity.screenData.record} $SHARED_PREFERENCE_RECORD_KEY", record)
+            putString("${this@EditRecordActivity.screenData.record} $SHARED_PREFERENCE_DATE_KEY", date)
         }
     }
 
     private fun clearRecord() {
         recordPreferences.edit {
-            remove("${screenData.record} record")
-            remove("${screenData.record} date")
+            remove("${screenData.record} $SHARED_PREFERENCE_RECORD_KEY")
+            remove("${screenData.record} $SHARED_PREFERENCE_DATE_KEY")
             finish()
         }
     }
@@ -79,6 +91,13 @@ class EditRecordActivity : AppCompatActivity() {
         val recordFieldHint: String
     ) : Serializable
 
+
+    companion object {
+        const val INTENT_EXTRA_SCREEN_DATA = "screen_data"
+
+        const val SHARED_PREFERENCE_RECORD_KEY = "record"
+        const val SHARED_PREFERENCE_DATE_KEY = "date"
+    }
 
 }
 

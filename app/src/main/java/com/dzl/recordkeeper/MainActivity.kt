@@ -81,9 +81,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 when (selection) {
                     ALL_DISPLAY_VALUE -> {
                         getSharedPreferences(LiftingFragment.FILENAME, MODE_PRIVATE).edit { clear() }
+                        getSharedPreferences(CardioFragment.FILENAME, MODE_PRIVATE).edit { clear() }
+                    }
+                    CARDIO_DISPLAY_VALUE -> {
+                        getSharedPreferences(CardioFragment.FILENAME, MODE_PRIVATE).edit { clear() }
+                    }
+                    LIFTING_DISPLAY_VALUE -> {
                         getSharedPreferences(LiftingFragment.FILENAME, MODE_PRIVATE).edit { clear() }
                     }
-                    else -> getSharedPreferences(selection, MODE_PRIVATE).edit { clear() }
                 }
                 refreshCurrentFragment()
                 val confirmationBar = Snackbar.make(binding.frameContent, "Records cleared successfully!", Snackbar.LENGTH_LONG)
